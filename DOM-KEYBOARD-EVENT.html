@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .center {
+            width: 80%;
+            height: auto;
+        }
+
+        .center h3,
+        .center button {
+            background-color: dimgray;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .center input {
+            width: 99.5%;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .center buttom {
+            width: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <h2>keyboard Event</h2>
+            <input type="text" name="name" id="name" class="sample text example" required minlength="3" maxlength="30"
+                placeholder="full Name" onkeydown="fun1(event)" onkeypress="fun2()" onkeyup="fun3(event)">
+            <button onclick="postDate()">Submit</button>
+        </div>
+    </div>
+</body>
+<script>
+    function fun1(event) {
+        console.log(event)
+    }
+    function fun2(event) {
+        console.log(event)
+    }
+    function fun3(event) {
+        // console.log(event)
+        // console.log(event.target)
+
+        console.log(`
+                type          : ${event.target.type}
+                id            : ${event.target.id}
+                name          : ${event.target.name}
+                class         : ${event.target.class}
+                required      : ${event.target.required}
+                min Length    : ${event.target.minLength}
+                max Length    : ${event.target.maxLength}
+                placeholder   : ${event.target.placeholder}
+                value         : ${event.target.value}
+                key           : ${event.key}`)
+    }
+    function postDate() {
+        let input = document.getElementById("name")
+        if (input.value.length < input.minLength || input.value > input.maxLength)
+            input.style.border = "2px solid red"
+        else
+            input.style.border = "2px solid navy"
+    }
+</script>
+
+</html>

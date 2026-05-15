@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 50vw;
+            height: 50vh;
+            background-color: green;
+            color: white;
+            font-size: 30px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+        <div class="main"
+        onmouseover="fun1()"
+        onmouseenter="fun2()"
+        onmouseup="fun3()"
+        onmousedown="fun4()"
+        onclick="fun5()"
+        onmousemove="fun7()"
+        onmousewheel="fun8()"
+        onmouseout="fun9()"
+        onmouseleave="fun10()"
+        >No Event</div>
+
+        <script>
+            var main = document.querySelector(".main")
+
+            function fun1(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "grey"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+
+            
+            function fun2(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "indigo"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+            function fun3(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "red"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+            function fun4(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "orange"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+            function fun5(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "pink"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+            function fun6(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "black"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+            function fun7(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "puple"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+            function fun8(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "violet"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+            function fun9(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "green"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+            function fun10(){
+                main.innerHTML = "onmouseover event"
+                main.style.backgroundColor = "brown"
+                main.style.color = "white"
+                console.log("onmouseover event is called")
+            }
+        </script>
+</body>
+</html>

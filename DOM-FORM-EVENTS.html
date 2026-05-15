@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .center {
+            width: 80%;
+            height: auto;
+        }
+
+        .center h3,
+        .center button {
+            background-color: dimgray;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .center input {
+            width: 99.5%;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .center buttom {
+            width: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <h3>Keyboard Events</h3>
+            <h3 id="hname">Full Name : </h3>
+            <h3 id="hemail">Email Address : </h3>
+            <h3 id="hphone">Phone Number : </h3>
+            <h3 id="hdesignation">Designation : </h3>
+            <h3 id="hsalary">Salary : </h3>
+            <h3 id="hcity">City Name : </h3>
+            <h3 id="hstate">State Name : </h3>
+            <!-- <form onsubmit="postDate(); return false"> -->
+           
+                <form onsubmit="postData(event)">
+               
+                <input type="text" id="name" required placeholder="Full Name" onfocus="fun1(event)"
+                    onblur="fun2(event)" onchange="fun3(event)">
+
+                <input type="text" id="phone" required placeholder="phone Number" onfocus="fun1(event)"
+                    onblur="fun2(event)" onchange="fun3(event)">
+                    
+                    <input type="text" id="designation" required placeholder="Designation"
+                    onfocus="fun1(event)" onblur="fun2(event)" onchange="fun3(event)">
+                    
+                    <input type="text" id="salary" required placeholder="Salary"
+                    onfocus="fun1(event)" onblur="fun2(event)" onchange="fun3(event)">
+                    
+                    <input type="text" id="city" required placeholder="City Name"
+                    onfocus="fun1(event)" onblur="fun2(event)" onchange="fun3(event)">
+                    
+                    <input type="text" id="state" required placeholder="State Name"
+                    onfocus="fun1(event)" onblur="fun2(event)" onchange="fun3(event)">
+ 
+                    <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function fun1(event) {
+            event.target.style.backgroundColor = "pink"
+        }
+        function fun2(event) {
+            event.target.style.backgroundColor = "gray"
+            event.target.style.color = "white"
+        }
+        function fun3(event) {
+            let input = event.target
+            let heading = document.getElementById(`h${input.id}`)
+            heading.innerHTML = `${input.placeholder} : ${input.value}`
+        }
+
+        // function postData(){
+        function postData(event) {
+            event.preventDefault()
+            alert(`
+            Name : ${document.getElementById("name").value}
+            Email : ${document.getElementById("email").value}
+            Phone : ${document.getElementById("phone").value}
+            Designation : ${document.getElementById("designation").value}
+            Salary : ${document.getElementById("salary").value}
+            City : ${document.getElementById("city").value}
+            State : ${document.getElementById("state").value}
+         `)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center {
+            width: 70%;
+            height: 50%;
+        }
+
+        .center h1 {
+            background-color: dimgray;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .center input {
+            width: 99.5%;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .center button {
+            width: 100%;
+            background-color: dimgray;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <h1 id="heading">Age Calculator</h1>
+            <form onsubmit="postData(); return false">
+                <input type="date" id="dob">
+                <button type="submit">Get Age</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        var heading = document.getElementById("heading")
+
+        function postData() {
+            let targetDate = new Date(document.getElementById("dob").value)
+            let currentDate = new Date()
+            let diff = currentDate - targetDate
+            if (diff > 0) {
+                let year = parseInt(diff / (1000 * 60 * 60 * 24 * 365.24))
+                let month = parseInt(diff % (1000 * 60 * 60 * 24 * 365.24) / (1000 * 60 * 60 * 24 * 30.43))
+                let days = parseInt(diff % (1000 * 60 * 60 * 24 * 30.43) / (1000 * 60 * 60 * 24))
+                heading.innerHTML = `Your Age:${year} Years, ${month} Months,${days} Days`
+            }
+            else {
+                alert("Please Provide a Valid Date")
+            }
+        }
+    </script>
+</body>
+
+</html>
